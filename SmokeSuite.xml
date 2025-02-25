@@ -1,0 +1,9 @@
+<suite name="Suite Smoke Test" parallel="classes" thread-count="16">
+    <test name="Smoke Suite">
+        <classes>
+            <class name = ""/>
+            <class name = ""/>
+
+        </classes>
+    </test>
+</suite>
