@@ -5,21 +5,20 @@ import HelperMethods.JavascriptMethods;
 import Logger.LoggerUtility;
 import ObjectData.GoogleLoginFormObjectData;
 import com.aventstack.chaintest.plugins.ChainTestListener;
-import dataBase.Queries.GmailLoginForm;
+import dataBase.Queries.RegisterLoginForm;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.sql.SQLException;
-import java.util.Set;
 
 public class GoogleLoginPage
 {
     WebDriver driver;
     ElementsMethods elementsMethods;
     String mainWindowHandle;
-    GmailLoginForm gmailLoginForm;
+    RegisterLoginForm gmailLoginForm;
     JavascriptMethods javascriptMethods;
 
     //Elemente
@@ -45,7 +44,7 @@ public class GoogleLoginPage
     public GoogleLoginPage(WebDriver driver) throws SQLException {
         this.driver = driver;
         this.elementsMethods = new ElementsMethods(driver);
-        this.gmailLoginForm = new GmailLoginForm();
+        this.gmailLoginForm = new RegisterLoginForm();
         this.javascriptMethods = new JavascriptMethods(driver);
         PageFactory.initElements(driver,this);
     }

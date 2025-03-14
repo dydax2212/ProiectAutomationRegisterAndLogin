@@ -1,0 +1,16 @@
+<dataSets>
+    <dataSet_1>
+        <email>testemag887@gmail.com</email>
+        <fullName>Teste Testare</fullName>
+        <phoneNumbe>0723123456</phoneNumbe>
+        <password1>TesteMag1190!</password1>
+        <password2>TesteMag1190!</password2>
+    </dataSet_1>
+    <dataSet_2>
+        <email>testemag887@gmail.com</email>
+        <fullName>Teste Testare</fullName>
+        <phoneNumbe>0723123456</phoneNumbe>
+        <password1>TesteMag1190dsa!</password1>
+        <password2>TesteMag1190!</password2>
+    </dataSet_2>
+</dataSets>

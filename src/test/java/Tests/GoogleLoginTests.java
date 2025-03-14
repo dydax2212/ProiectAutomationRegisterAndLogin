@@ -2,10 +2,9 @@ package Tests;
 
 import HelperMethods.ElementsMethods;
 import ObjectData.GoogleLoginFormObjectData;
-import Pages.GoogleLoginPage;
+import Pages.GoogleRegisterPage;
 import Pages.HomePage;
 import ShareDataBrowser.Hooks;
-import dataBase.Queries.GmailLoginForm;
 import org.testng.annotations.Test;
 import xmlReaderUtility.xmlReader;
 
@@ -16,30 +15,30 @@ public class GoogleLoginTests extends Hooks
 {
     ElementsMethods elementsMethods;
     HomePage homePage;
-    GoogleLoginPage googleLoginPage;
+    GoogleRegisterPage googleRegisterPage;
 
     private Map<String, GoogleLoginFormObjectData> googleLoginFormObjectDataMap;
 
     @Test
     public void metodaTest() throws SQLException
     {
-        googleLoginFormObjectDataMap = xmlReader.loadData("src/test/resources/gmailLoginData.xml", GoogleLoginFormObjectData.class);
+        googleLoginFormObjectDataMap = xmlReader.loadData("src/test/resources/registerLoginData.xml", GoogleLoginFormObjectData.class);
         GoogleLoginFormObjectData data = googleLoginFormObjectDataMap.get("dataSet_1");
 
         elementsMethods = new ElementsMethods(getDriver());
         homePage = new HomePage(getDriver());
-        googleLoginPage = new GoogleLoginPage(getDriver());
+        googleRegisterPage = new GoogleRegisterPage(getDriver());
 
         homePage.acceptCookies();
         homePage.clickOnContulMeu();
         homePage.clickOnLogin();
 
-        googleLoginPage.clickGoogleLogin();
-        googleLoginPage.switchToGoogleLoginWindow();
+        googleRegisterPage.clickGoogleLogin();
+        googleRegisterPage.switchToGoogleLoginWindow();
 
 
 
-        googleLoginPage.addEntryInForm(data);
+        googleRegisterPage.addEntryInForm(data);
       //  googleLoginPage.updateEntryInForm(data,3);
 
        // googleLoginPage.switchBackToMainWindow();

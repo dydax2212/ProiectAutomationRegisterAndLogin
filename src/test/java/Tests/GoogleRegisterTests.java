@@ -22,7 +22,7 @@ public class GoogleRegisterTests extends Hooks
 
     @Test
     public void metodaTest() throws SQLException {
-        googleLoginFormObjectDataMap = xmlReader.loadData("src/test/resources/gmailLoginData.xml", GoogleLoginFormObjectData.class);
+        googleLoginFormObjectDataMap = xmlReader.loadData("src/test/resources/registerLoginData.xml", GoogleLoginFormObjectData.class);
         GoogleLoginFormObjectData data = googleLoginFormObjectDataMap.get("dataSet_1");
 
         elementsMethods = new ElementsMethods(getDriver());
@@ -37,7 +37,7 @@ public class GoogleRegisterTests extends Hooks
         googleLoginPage.switchToGoogleLoginWindow();
 
 
-//        googleLoginPage.addEntryInForm(data);
+        googleLoginPage.addEntryInForm(data);
 //        googleLoginPage.updateEntryInForm(data,6);
 
         googleLoginPage.switchBackToMainWindow();

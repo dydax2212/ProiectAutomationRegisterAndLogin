@@ -13,17 +13,22 @@ public class LoginPage
 
     //Elemente
 
-    @FindBy(xpath = "(//*[@class='onchange-validate'])[1]")
+    @FindBy(xpath = "//*[@class='action secondary medium orange']")
+    WebElement registerButton;
+
+    @FindBy(xpath = "//*[@id='email-input']")
     WebElement emailField;
 
-    @FindBy(xpath = "(//*[@class='onchange-validate'])[2]")
+    @FindBy(xpath = "//*[@id='password-input']")
     WebElement passwordField;
 
-    @FindBy(xpath = "//*[@class='checkmark']")
-    WebElement rememberMeCheckbox;
+    @FindBy(xpath = "//*[@id='gigya-remember']")
+    WebElement rememberMeButton;
 
     @FindBy(xpath = "//*[@class='action primary medium full-width']")
     WebElement continueButton;
+
+
 
     public LoginPage(WebDriver driver)
     {
