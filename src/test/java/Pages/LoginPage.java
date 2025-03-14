@@ -25,8 +25,6 @@ public class LoginPage
     @FindBy(xpath = "//*[@class='action primary medium full-width']")
     WebElement continueButton;
 
-
-
     public LoginPage(WebDriver driver)
     {
         this.driver = driver;

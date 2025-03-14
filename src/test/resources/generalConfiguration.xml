@@ -1,0 +1,8 @@
+<configuration>
+    <dataBaseConfig>
+        <port>3306</port>
+        <dataBase>UserData_database</dataBase>
+        <userName>root</userName>
+        <password>#GreenAge*24!</password>
+    </dataBaseConfig>
+</configuration>

@@ -28,9 +28,6 @@ public class HomePage
     @FindBy(xpath = "//*[@class='flex action toggle show-account relative']")
     WebElement contulMeu;
 
-    @FindBy(css = "#ui-id-2 > div > p")
-    WebElement accountWindowMessage;
-
     @FindBy(css = "#ui-id-2 > div > div > a.full-width.align-center.action.orange.primary.small.log-in")
     WebElement loginButton;
 
@@ -44,7 +41,41 @@ public class HomePage
         PageFactory.initElements(driver,this);
     }
 
+    public void acceptCookies()
+    {
+        elementsMethods.waitUntilElementIsPresent(checkStatisticsButton);
+        elementsMethods.clickOnElement(checkStatisticsButton);
 
+        elementsMethods.waitUntilElementIsPresent(checkComfortButton);
+        elementsMethods.clickOnElement(checkComfortButton);
+
+        elementsMethods.waitUntilElementIsPresent(acceptAllButton);
+        elementsMethods.clickOnElement(acceptAllButton);
+    }
+
+    public  void rejectCookies()
+    {
+        elementsMethods.waitUntilElementIsPresent(rejectCookiesButton);
+        elementsMethods.clickOnElement(rejectCookiesButton);
+    }
+
+    public void clickOnContulMeu()
+    {
+        elementsMethods.waitUntilElementIsPresent(contulMeu);
+        elementsMethods.clickOnElement(contulMeu);
+    }
+
+    public void clickOnRegister()
+    {
+        elementsMethods.waitUntilElementIsPresent(registerButton);
+        elementsMethods.clickOnElement(registerButton);
+    }
+
+    public void clickOnLogin()
+    {
+        elementsMethods.waitUntilElementIsPresent(loginButton);
+        elementsMethods.clickOnElement(loginButton);
+    }
 
 
 }
