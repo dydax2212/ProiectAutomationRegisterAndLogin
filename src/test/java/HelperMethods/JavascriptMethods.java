@@ -18,10 +18,6 @@ public class JavascriptMethods
         this.driver = driver;
     }
 
-    public void scrollToHalfPage() {
-        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight / 2);");
-    }
-
     public void scrollToElement(WebElement element) {
         Assert.assertTrue(element.isDisplayed(), "Element is not visible!");
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);

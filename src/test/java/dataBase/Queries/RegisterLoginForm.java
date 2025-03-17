@@ -1,6 +1,6 @@
 package dataBase.Queries;
 
-import ObjectData.GoogleLoginFormObjectData;
+import ObjectData.RegisterFormObjectData;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,9 +10,9 @@ public class RegisterLoginForm extends CommonTable {
     public RegisterLoginForm() throws SQLException {
     }
 
-    public synchronized void updateEntryById(GoogleLoginFormObjectData data, Integer idGoogleForm) throws SQLException{
+    public synchronized void updateEntryById(RegisterFormObjectData data, Integer idGoogleForm) throws SQLException{
         Statement stm = dbConnection.getConnection().createStatement();
-        String query = "update users set password='" + data.getGpassword() +
+        String query = "update users set password='" + data.getPassword1() +
                 "' where id =" + idGoogleForm + ";";
         stm.execute(query);
     }
