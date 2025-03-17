@@ -15,8 +15,6 @@ public class DbConnection {
         createConnection();
     }
 
-
-
     private void createConnection() throws SQLException {
         Configuration config = ConfigReader.readConfig("src/test/resources/generalConfiguration.xml");
         connection = DriverManager.getConnection(getPreparedURL(config), config.getDataBaseConfig().getUserName(), config.getDataBaseConfig().getPassword());

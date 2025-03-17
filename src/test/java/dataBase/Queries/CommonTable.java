@@ -11,5 +11,4 @@ public class CommonTable
     public CommonTable() throws SQLException {
         dbConnection = DbConnection.getInstance();
     }
-
 }

@@ -37,6 +37,10 @@ public class ElementsMethods extends CommonMethods {
         }
     }
 
+    public void sendTextToField(WebElement element, String text){
+        element.sendKeys(text);
+    }
+
     public void hoverOnElement(WebElement element) {
         Assert.assertTrue(element.isDisplayed(), "Element is not visible!");
         actions.moveToElement(element).perform();

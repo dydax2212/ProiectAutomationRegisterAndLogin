@@ -1,4 +1,6 @@
 package ObjectData;
 
-public class LoginFormObjectData {
+public class LoginFormObjectData
+{
+
 }
