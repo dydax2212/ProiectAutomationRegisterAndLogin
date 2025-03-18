@@ -2,15 +2,19 @@
     <dataSet_1>
         <email>testemag887@gmail.com</email>
         <fullName>Teste Testare</fullName>
-        <phoneNumbe>0723123456</phoneNumbe>
+        <phoneNumber>0723123456</phoneNumber>
         <password1>TesteMag1190!</password1>
         <password2>TesteMag1190!</password2>
     </dataSet_1>
     <dataSet_2>
         <email>testemag887@gmail.com</email>
         <fullName>Teste Testare</fullName>
-        <phoneNumbe>0723123456</phoneNumbe>
+        <phoneNumber>072312345</phoneNumber>
         <password1>TesteMag1190dsa!</password1>
         <password2>TesteMag1190!</password2>
     </dataSet_2>
+    <dataSet_3>
+        <email>testaretest8855@gmail.com</email>
+        <password>Testtset1745@</password>
+    </dataSet_3>
 </dataSets>

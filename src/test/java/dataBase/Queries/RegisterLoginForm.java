@@ -2,7 +2,6 @@ package dataBase.Queries;
 
 import ObjectData.RegisterFormObjectData;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,8 +13,8 @@ public class RegisterLoginForm extends CommonTable {
     public synchronized void updateEntryById(RegisterFormObjectData data, Integer idGoogleForm) throws SQLException{
         Statement stm = dbConnection.getConnection().createStatement();
 
-        String query = "update users set password2='" + data.getPassword1() +
-                "' where id =" + idGoogleForm + ";";
+        String query = "UPDATE users SET password2='" + data.getPassword1() +
+                "' WHERE id =" + idGoogleForm + ";";
 
         stm.execute(query);
     }
@@ -31,7 +30,6 @@ public class RegisterLoginForm extends CommonTable {
     }
 
     public synchronized RegisterFormObjectData getUserDataById(int userId) throws SQLException {
-        // Creăm interogarea SQL prin concatenarea directă a valorii userId
         String query = "SELECT fullName, phoneNumber, password1, password2 FROM users WHERE id = " + userId + ";";
 
         Statement stm = dbConnection.getConnection().createStatement();

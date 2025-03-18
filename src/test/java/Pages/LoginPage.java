@@ -14,7 +14,7 @@ public class LoginPage
     //Elemente
 
     @FindBy(xpath = "//*[@class='action secondary medium orange']")
-    WebElement registerButton;
+    WebElement loginButton;
 
     @FindBy(xpath = "//*[@id='email-input']")
     WebElement emailField;
@@ -39,4 +39,23 @@ public class LoginPage
 
     //Metode
 
+    public void clickOnLoginButton(){
+
+    }
+
+    public void enterEmail(){
+
+    }
+
+    public void enterPassword(){
+
+    }
+
+    public void clickOnRememberMeButton(){
+
+    }
+
+    public void clickOnContinueButton(){
+
+    }
 }

@@ -8,6 +8,7 @@ import ShareDataBrowser.Hooks;
 import org.testng.annotations.Test;
 import xmlReaderUtility.xmlReader;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 public class RegisterTests extends Hooks
@@ -18,7 +19,7 @@ public class RegisterTests extends Hooks
     private Map<String, RegisterFormObjectData> registerFormObjectDataMap;
 
     @Test
-    public void metodaTest(){
+    public void happyFlow() throws SQLException {
         registerFormObjectDataMap = xmlReader.loadData("src/test/resources/registerLoginData.xml", RegisterFormObjectData.class);
         RegisterFormObjectData data= registerFormObjectDataMap.get("dataSet_1");
         elementsMethods = new ElementsMethods(getDriver());
@@ -31,5 +32,23 @@ public class RegisterTests extends Hooks
 
         registerPage.enterEmailField(data);
         registerPage.fillRegisterFields(data);
+
+    }
+
+    @Test
+    public void negativeFlow() throws SQLException {
+        registerFormObjectDataMap = xmlReader.loadData("src/test/resources/registerLoginData.xml", RegisterFormObjectData.class);
+        RegisterFormObjectData data= registerFormObjectDataMap.get("dataSet_2");
+        elementsMethods = new ElementsMethods(getDriver());
+        homePage = new HomePage(getDriver());
+        registerPage = new RegisterPage(getDriver());
+
+        homePage.acceptCookies();
+        homePage.clickOnContulMeu();
+        homePage.clickOnRegister();
+
+        registerPage.enterEmailField(data);
+        registerPage.fillRegisterFields(data);
+
     }
 }

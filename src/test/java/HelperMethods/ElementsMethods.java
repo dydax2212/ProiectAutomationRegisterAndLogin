@@ -37,6 +37,11 @@ public class ElementsMethods extends CommonMethods {
         }
     }
 
+    public void actionsClick(WebElement element) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).click().build().perform();
+    }
+
     public void sendTextToField(WebElement element, String text){
         element.sendKeys(text);
     }

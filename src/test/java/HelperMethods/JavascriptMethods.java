@@ -31,15 +31,4 @@ public class JavascriptMethods
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
-
-    public void forceClick(WebElement element) {
-        try {
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();", element);
-            LoggerUtility.infoTest("Forced click performed on element: " + element);
-            ChainTestListener.log("Forced click executed on element.");
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to force click on element: " + e.getMessage());
-        }
-    }
 }
