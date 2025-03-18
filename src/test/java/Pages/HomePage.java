@@ -44,34 +44,52 @@ public class HomePage
         PageFactory.initElements(driver,this);
     }
 
-    public void acceptCookies()
-    {
+    public void acceptCookies() {
         elementsMethods.waitUntilElementIsPresent(checkStatisticsButton);
         elementsMethods.clickOnElement(checkStatisticsButton);
+        LoggerUtility.infoTest("Clicked on 'Check Statistics' button.");
+        ChainTestListener.log("Clicked on 'Check Statistics' button.");
 
         elementsMethods.waitUntilElementIsPresent(checkComfortButton);
         elementsMethods.clickOnElement(checkComfortButton);
+        LoggerUtility.infoTest("Clicked on 'Check Comfort' button.");
+        ChainTestListener.log("Clicked on 'Check Comfort' button.");
 
         elementsMethods.waitUntilElementIsPresent(acceptAllButton);
         elementsMethods.clickOnElement(acceptAllButton);
+        LoggerUtility.infoTest("Clicked on 'Accept All' button.");
+        ChainTestListener.log("Clicked on 'Accept All' button.");
+
+        Assert.assertTrue(checkStatisticsButton.isDisplayed(), "Error: 'Check Statistics' button not displayed!");
+        Assert.assertTrue(checkComfortButton.isDisplayed(), "Error: 'Check Comfort' button not displayed!");
+        Assert.assertTrue(acceptAllButton.isDisplayed(), "Error: 'Accept All' button not displayed!");
     }
 
-    public  void rejectCookies()
-    {
+    public void rejectCookies() {
         elementsMethods.waitUntilElementIsPresent(rejectCookiesButton);
         elementsMethods.clickOnElement(rejectCookiesButton);
+        LoggerUtility.infoTest("Clicked on 'Reject Cookies' button.");
+        ChainTestListener.log("Clicked on 'Reject Cookies' button.");
+
+        Assert.assertTrue(rejectCookiesButton.isDisplayed(), "Error: 'Reject Cookies' button not displayed!");
     }
 
-    public void clickOnContulMeu()
-    {
+    public void clickOnContulMeu() {
         elementsMethods.waitUntilElementIsPresent(contulMeu);
         elementsMethods.clickOnElement(contulMeu);
+        LoggerUtility.infoTest("Clicked on 'Contul Meu' button.");
+        ChainTestListener.log("Clicked on 'Contul Meu' button.");
+
+        Assert.assertTrue(contulMeu.isDisplayed(), "Error: 'Contul Meu' button not displayed!");
     }
 
-    public void clickOnRegister()
-    {
+    public void clickOnRegister() {
         elementsMethods.waitUntilElementIsPresent(registerButton);
         elementsMethods.clickOnElement(registerButton);
+        LoggerUtility.infoTest("Clicked on 'Register' button.");
+        ChainTestListener.log("Clicked on 'Register' button.");
+
+        Assert.assertTrue(registerButton.isDisplayed(), "Error: 'Register' button not displayed!");
     }
 
     public void clickOnLogin(){
