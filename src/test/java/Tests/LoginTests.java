@@ -28,6 +28,9 @@ public class LoginTests extends Hooks
         homePage = new HomePage(getDriver());
         loginPage = new LoginPage(getDriver());
 
+        LoggerUtility.infoTest("Test started: Registration on Dedeman website");
+        ChainTestListener.log("Chrome opened");
+
         // Accept cookies and navigate to the login page
         homePage.acceptCookies();
         LoggerUtility.infoTest("Cookies accepted.");
@@ -65,6 +68,9 @@ public class LoginTests extends Hooks
         elementsMethods = new ElementsMethods(getDriver());
         homePage = new HomePage(getDriver());
         loginPage = new LoginPage(getDriver());
+
+        LoggerUtility.infoTest("Test started: Registration on Dedeman website");
+        ChainTestListener.log("Chrome opened");
 
         // Accept cookies and navigate to the login page
         homePage.acceptCookies();

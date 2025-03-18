@@ -60,6 +60,9 @@ public class RegisterTests extends Hooks
         homePage = new HomePage(getDriver());
         registerPage = new RegisterPage(getDriver());
 
+        LoggerUtility.infoTest("Test started: Registration on Dedeman website");
+        ChainTestListener.log("Chrome opened");
+
         // Accept cookies and navigate to registration page
         homePage.acceptCookies();
         LoggerUtility.infoTest("Cookies accepted.");
