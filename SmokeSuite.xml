@@ -2,7 +2,7 @@
     <test name="Smoke Suite">
         <classes>
             <class name = "Tests.RegisterTests"/>
-
+            <class name = "Tests.LoginTests"/>
         </classes>
     </test>
 </suite>
