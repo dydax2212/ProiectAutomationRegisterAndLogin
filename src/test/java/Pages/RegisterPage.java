@@ -1,7 +1,6 @@
 package Pages;
 
 import HelperMethods.ElementsMethods;
-import HelperMethods.JavascriptMethods;
 import Logger.LoggerUtility;
 import ObjectData.RegisterFormObjectData;
 import com.aventstack.chaintest.plugins.ChainTestListener;
@@ -15,7 +14,6 @@ public class RegisterPage
 {
     WebDriver driver;
     ElementsMethods elementsMethods;
-    JavascriptMethods javascriptMethods;
     RegisterFormObjectData registerFormObjectData;
 
     //Elemente
@@ -31,6 +29,9 @@ public class RegisterPage
 
     @FindBy(css = "#maincontent > div.columns > div > div.register-page-wrap > div.gigya-form-box > form.gigya-form.gigya-register-email-form > fieldset > div:nth-child(2) > div > input")
     WebElement phoneNumberField;
+
+    @FindBy(css = "#phone-error > div > p.red-text.mb-0.font-size__regular")
+    WebElement incorrectFormat;
 
     @FindBy(css = "#email-password")
     WebElement passwordField;
@@ -56,7 +57,6 @@ public class RegisterPage
     public RegisterPage(WebDriver driver){
         this.driver = driver;
         this.elementsMethods = new ElementsMethods(driver);
-        this.javascriptMethods = new JavascriptMethods(driver);
         registerFormObjectData = new RegisterFormObjectData();
         PageFactory.initElements(driver,this);
     }
@@ -83,6 +83,16 @@ public class RegisterPage
     public void enterPhoneNumber(RegisterFormObjectData data){
         elementsMethods.waitUntilElementIsPresent(phoneNumberField);
         elementsMethods.sendTextToField(phoneNumberField, data.getPhoneNumber());
+
+        elementsMethods.waitUntilElementIsPresent(incorrectFormat);
+        String actualMessage = incorrectFormat.getText();
+
+        if (actualMessage.equals("Numărul de telefon este într-un format incorect")) {
+            LoggerUtility.infoTest("Error: Incorrect phone number format entered.");
+            Assert.fail("Phone number format is incorrect: " + actualMessage);
+        } else {
+            LoggerUtility.infoTest("Phone number entered successfully: " + data.getPhoneNumber());
+        }
     }
 
     public void enterPasswords(RegisterFormObjectData data){
@@ -117,10 +127,10 @@ public class RegisterPage
 
         elementsMethods.actionsClick(ofAgeCheckbox);
         elementsMethods.actionsClick(newslettersCheckbox);
-//        elementsMethods.clickOnElement(continueRegisterButton);
-//
-//        Assert.assertTrue(continueRegisterButton.isDisplayed(), "Error: Continue button is not displayed!");
-//        ChainTestListener.log("Completed registration form.");
-//        LoggerUtility.infoTest("User registration form submitted successfully.");
+        elementsMethods.clickOnElement(continueRegisterButton);
+
+        Assert.assertTrue(continueRegisterButton.isDisplayed(), "Error: Continue button is not displayed!");
+        ChainTestListener.log("Completed registration form.");
+        LoggerUtility.infoTest("User registration form submitted successfully.");
     }
 }

@@ -1,10 +1,13 @@
 package Pages;
 
 import HelperMethods.ElementsMethods;
+import Logger.LoggerUtility;
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class HomePage
 {
@@ -71,11 +74,15 @@ public class HomePage
         elementsMethods.clickOnElement(registerButton);
     }
 
-    public void clickOnLogin()
-    {
-        elementsMethods.waitUntilElementIsPresent(loginButton);
+    public void clickOnLogin(){
+        boolean isLoginButtonPresent = elementsMethods.isElementPresent(loginButton);
+        Assert.assertTrue(isLoginButtonPresent, "Error: Login button is not present on the page.");
+        LoggerUtility.infoTest("Login button is present on the page.");
+
         elementsMethods.clickOnElement(loginButton);
+        LoggerUtility.infoTest("Clicked on the login button.");
+
+        LoggerUtility.infoTest("Page load completed after clicking the login button.");
+        ChainTestListener.log("Login button clicked and page load completed.");
     }
-
-
 }
